@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+
+    <key>Label</key>
+    <string>com.floriankempenich.syncdnd.plist</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StartInterval</key>
+    <integer>20</integer>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/floriankempenich/Work/Private/Dev/Services/SyncDnD/mac/local_wrapper/sandbox/launchd_demo/output/stderr.log</string>
+
+    <key>StandardOutPath</key>
+    <string>/Users/floriankempenich/Work/Private/Dev/Services/SyncDnD/mac/local_wrapper/sandbox/launchd_demo/output/stdout.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>PATH</key>
+      <string><![CDATA[/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin]]></string>
+      <!-- <key>WORKING_DIR</key> -->
+      <!-- <string>/Users/floriankempenich/Work/Private/Dev/Services/SyncDnD/mac/local_wrapper/sandbox/launchd_demo</string> -->
+      <!-- Need to use CDATA for the thing above ??? -->
+    </dict>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/floriankempenich/Work/Private/Dev/Services/SyncDnD/mac/local_wrapper/sandbox/launchd_demo</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>/usr/local/bin/node</string>
+      <string>demo.js</string>
+    </array>
+
+  </dict>
+</plist>
