@@ -1,0 +1,19 @@
+version: '2.3'
+services:
+  mosquitto:
+    image: toke/mosquitto
+    volumes:
+      - ./mosquitto/config/:/mqtt/config
+      # - ./mosquitto/log/:/mqtt/log
+      # - ./mosquitto/data/:/mqtt/data
+      - /etc/letsencrypt/:/etc/letsencrypt/:ro
+      - /etc/ssl/certs:/etc/ssl/certs:ro
+    ports:
+      # WARNING:
+      # ONLY USE PORT 1883 internally !! --> No TLS
+      # Use port 8883 from outside (encrypted w/ TLS)
+      #
+      # Let's try WITHOUT (todo: remove if working)
+      # - 1883:1883
+      - 5678:8883
+    restart: always
