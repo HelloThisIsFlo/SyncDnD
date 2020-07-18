@@ -1,13 +1,10 @@
 version: '2.3'
 services:
   mosquitto:
-    image: toke/mosquitto
+    image: eclipse-mosquitto
     volumes:
-      - ./config/:/mqtt/config
-      # - ./mosquitto/log/:/mqtt/log
-      # - ./mosquitto/data/:/mqtt/data
+      - ./config/:/mosquitto/config/
       - /etc/letsencrypt/:/etc/letsencrypt/:ro
-      - /etc/ssl/certs:/etc/ssl/certs:ro
     ports:
       # WARNING:
       # ONLY USE PORT 1883 internally !! --> No TLS
