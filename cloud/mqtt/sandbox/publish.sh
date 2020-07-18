@@ -7,13 +7,15 @@ if [ -z $MSG ]; then
     exit 1
 fi
 
-PASS=$(cat $DIR/pass)
+# Load config
+source $DIR/../../../config.env
+
 mqtt-client publish \
-    --host=floriankempenich.com:5678 \
+    --host=$DOMAIN:$MQTT_PORT \
     --transport=TCP-TLS \
     --cert_path=/etc/ssl/cert.pem \
     --client_id=sandbox-cli-pub \
     --topic=dnd \
     --username=syncdnd \
-    --password=$PASS \
+    --password=$MQTT_PASS \
     --payload=$MSG
