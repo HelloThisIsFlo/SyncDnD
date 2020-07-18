@@ -43,7 +43,7 @@ Sync Do Not Disturb between the iPhone and the Mac.
 
 ### In Picture
 
-![Concept](https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/img/Concept.png)
+![Concept](https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/README/Concept.png)
 
 
 ## Deployment
@@ -68,9 +68,9 @@ Required for both the server in the Cloud and the Mac
 ### iPhone
 - **Shortcuts:** Create manually
   <p float="left">
-    <img src="https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/img/shortcut1.jpeg" width="250" />
-    <img src="https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/img/shortcut2.jpeg" width="250" /> 
-    <img src="https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/img/shortcut3.jpeg" width="250" />
+    <img src="https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/README/shortcut1.jpeg" width="250" />
+    <img src="https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/README/shortcut2.jpeg" width="250" /> 
+    <img src="https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/README/shortcut3.jpeg" width="250" />
   </p>
 
 ### Cloud
