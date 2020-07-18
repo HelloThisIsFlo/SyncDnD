@@ -5,9 +5,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # Load config
 source $DIR/../config.env
 cat $DIR/../config.env
-echo $MQTT_PASS
-echo $MQTT_PORT
-
 
 # Create mosquitto config
 sed "s/DOMAIN/$DOMAIN/" $DIR/mqtt/config/mosquitto.conf.template > $DIR/mqtt/config/mosquitto.conf
