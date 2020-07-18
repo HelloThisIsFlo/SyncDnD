@@ -12,5 +12,5 @@ services:
       #
       # Let's try WITHOUT (todo: remove if working (also remove in mosquitto config))
       # - 1883:1883
-      - 5678:8883
+      - $MQTT_PORT:8883
     restart: always

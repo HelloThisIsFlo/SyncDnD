@@ -56,7 +56,7 @@ Before doing any of the following steps, you must first create a `config.ENV` fi
 
 MQTT_PORT=XXX # Port on which you'd like to run the MQTT instance
 MQTT_PASS=XXX # Password to ensure secure connection to the MQTT instance
-DOMAIN=http://XXX.com # Domain where the cloud part will be hosted - Can be http or https
+DOMAIN=XXX.com # Domain where the cloud part will be hosted
 ```
 
 #### Dependencies

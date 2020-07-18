@@ -1,1 +1,5 @@
 config.env
+
+# MQTT
+password
+mosquitto.conf
