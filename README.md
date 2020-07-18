@@ -27,7 +27,7 @@ Sync Do Not Disturb between the iPhone and the Mac.
     - `https://my_domain.com/dnd/off` => Send `OFF` to the `/dnd` MQTT Topic
 
 - ### On the Mac
-  **1 Python Wapper**: Listen to the `/dnd` MQTT Topic
+  **1 Local Wrapper**: Listen to the `/dnd` MQTT Topic
     - On `ON` message, enable DnD with:
     ```bash
     defaults -currentHost write ~/Library/Preferences/ByHost/com.apple.notificationcenterui doNotDisturb -boolean true
@@ -58,6 +58,7 @@ MQTT_PORT=XXX # Port on which you'd like to run the MQTT instance
 MQTT_PASS=XXX # Password to ensure secure connection to the MQTT instance
 DOMAIN=XXX.com # Domain where the cloud part will be hosted
 ```
+The `./config.env` file will be needed both on the machine running in the Cloud and on the Mac.
 
 #### Dependencies
 Required for both the server in the Cloud and the Mac
@@ -65,7 +66,7 @@ Required for both the server in the Cloud and the Mac
 - Docker Compose
 
 
-### iPhone
+### 1. iPhone
 - **Shortcuts:** Create manually
   <p float="left">
     <img src="https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/README/shortcut1.jpeg" width="250" />
@@ -73,17 +74,26 @@ Required for both the server in the Cloud and the Mac
     <img src="https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/README/shortcut3.jpeg" width="250" />
   </p>
 
-### Cloud
+### 2. Cloud
 **You must be on a server remotely accessible via the domain configured in `DOMAIN` when performing these steps**
-- #### MQTT
-  - Start the MQTT server with: `./cloud/start_mqtt.sh`
+- SSH in your server
+- Checkout the project
+- Create the [configuration file](#Configuration)
+- [Generate a LetsEncrypt certificate with certbot](https://certbot.eff.org/instructions) for the domain configured in `DOMAIN`  
+  _Certificates must be available at:_
+  ```shell
+  /etc/letsencrypt/live/DOMAIN/cert.pem
+  /etc/letsencrypt/live/DOMAIN/chain.pem
+  /etc/letsencrypt/live/DOMAIN/privkey.pem
+  ```
+- **Start the MQTT server with:** `./cloud/start_mqtt.sh`
+- **Start the webhooks with:** `./cloud/start_webhooks.sh`
 
-- #### Webhooks
-  - Start the webhooks with: `./cloud/start_webhooks.sh`
-
-### Mac
+### 3. Mac
 **This step should be performed on the Mac**
-- #### Python Wrapper
-  - Start the wrapper with: `./mac/start_local_wrapper.sh`
+- Open a shell on your mac
+- Checkout the project
+- Create the [configuration file](#Configuration)
+- **Start the local wrapper with:** `./mac/start_local_wrapper.sh`
 
-
+### 4. Done 😃🎉
