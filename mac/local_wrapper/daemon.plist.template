@@ -9,8 +9,8 @@
     <key>RunAtLoad</key>
     <true/>
 
-    <key>StartInterval</key>
-    <integer>20</integer>
+    <key>KeepAlive</key>
+    <true/>
 
     <key>StandardErrorPath</key>
     <string>%WORKING_DIR/output/stderr.log</string>
