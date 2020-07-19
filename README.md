@@ -53,9 +53,10 @@ Before doing any of the following steps, you must first create a `config.ENV` fi
 ```bash
 # Contents of './config.env'
 
-MQTT_PORT=XXX # Port on which you'd like to run the MQTT instance
-MQTT_PASS=XXX # Password to ensure secure connection to the MQTT instance
-DOMAIN=XXX.com # Domain where the cloud part will be hosted
+MQTT_PORT=XXX     # Port on which you'd like to run the MQTT instance
+MQTT_PASS=XXX     # A password to ensure secure connection to the MQTT instance
+DOMAIN=XXX.com    # Domain where the cloud part will be hosted
+WEBHOOKS_PORT=XXX # Post on which you'd like to run the webhooks
 ```
 The `./config.env` file will be needed both on the machine running in the Cloud and on the Mac.
 
@@ -66,7 +67,10 @@ Required for both the server in the Cloud and the Mac
 
 
 ### 1. iPhone
-- **Shortcuts:** Create manually
+- **Shortcuts:** Create manually. Use the following urls:
+    - `http://DOMAIN:WEBHOOKS_PORT/dnd/on`
+    - `http://DOMAIN:WEBHOOKS_PORT/dnd/off`
+
   <p float="left">
     <img src="https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/README/shortcut1.jpeg" width="250" />
     <img src="https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/README/shortcut2.jpeg" width="250" /> 

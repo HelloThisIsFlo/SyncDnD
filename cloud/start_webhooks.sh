@@ -12,7 +12,7 @@ cat $DIR/webhooks/config.json.template |
         >$DIR/webhooks/config.json
 
 # Start Webhooks
-export WEBHOOKS_PORT=3333 # TODO: Put in cfg & update readme
+export WEBHOOKS_PORT
 docker-compose -f $DIR/webhooks/docker-compose.yml up --build -d
 
 # Clean up injected config.json
