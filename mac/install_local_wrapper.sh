@@ -4,10 +4,10 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 APPNAME=syncdnd
 APP_DIR=$DIR/local_wrapper
 VIRTUALENV=$APPNAME
-LABEL=com.floriankempenich.$APPNAME.daemon.plist
+LABEL=com.floriankempenich.$APPNAME.daemon
 WORKING_DIR=/usr/local/lib/$LABEL
 
-PLIST_FILENAME=$LABEL
+PLIST_FILENAME=$LABEL.plist
 PLIST_PATH=$HOME/Library/LaunchAgents/$PLIST_FILENAME
 
 # Install virtualenv if needed
