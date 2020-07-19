@@ -8,3 +8,8 @@ source $DIR/../config.env
 export MQTT_PORT
 export WEBHOOKS_PORT
 docker-compose -f $DIR/docker-compose.yml down
+
+# Clean up generated files
+rm -f $DIR/mqtt/config/mosquitto.conf
+rm -f $DIR/mqtt/config/password
+rm -f $DIR/webhooks/config.json
