@@ -29,8 +29,8 @@
 
     <key>ProgramArguments</key>
     <array>
-      <string>/usr/local/bin/node</string>
-      <string>demo.js</string>
+      <string>/usr/bin/python3</string>
+      <string>daemon.py</string>
     </array>
 
   </dict>
