@@ -89,8 +89,7 @@ Required for both the server in the Cloud and the Mac
    /etc/letsencrypt/live/DOMAIN/chain.pem
    /etc/letsencrypt/live/DOMAIN/privkey.pem
    ```
-1. **Start the MQTT server with:** `./cloud/start_mqtt.sh`
-1. **Start the webhooks with:** `./cloud/start_webhooks.sh`
+1. **Start the MQTT and the Webhooks with:** `./cloud/start_cloud.sh`
 
 ### 3. Mac
 **The following steps should be performed on the Mac**
@@ -104,5 +103,5 @@ Required for both the server in the Cloud and the Mac
 
 ## Uninstallation
 1. **iPhone:** Remove the shortcuts
-2. **Cloud:** Run `./cloud/stop_mqtt.sh` and `./cloud/stop_webhooks.sh`
+2. **Cloud:** Run `./cloud/stop_cloud.sh`
 3. **Mac:** Run `./mac/uninstall_local_wrapper.sh`
