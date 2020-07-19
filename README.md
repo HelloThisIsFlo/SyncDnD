@@ -16,7 +16,9 @@ Sync Do Not Disturb between the iPhone and the Mac.
 
 
 ## Concept
-- #### On the iPhone
+![Concept](https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/README/Concept.png)
+
+- ### On the iPhone
   **2 Shortcuts**
     - **When DnD turned on:** Send request to `https://my_domain.com/dnd/on`
     - **When DnD turned off:** Send request to `https://my_domain.com/dnd/off`
@@ -41,9 +43,6 @@ Sync Do Not Disturb between the iPhone and the Mac.
     killall NotificationCenter
     ```
 
-### In Picture
-
-![Concept](https://raw.githubusercontent.com/FlorianKempenich/SyncDnD/master/README/Concept.png)
 
 
 ## Deployment
