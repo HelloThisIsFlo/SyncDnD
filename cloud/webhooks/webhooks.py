@@ -41,12 +41,12 @@ app = Flask(__name__)
 mqtt_client = MQTTClient()
 mqtt_client.connect()
 
-@app.route('/dnd/on')
+@app.route('/dnd/on', methods=['POST'])
 def dnd_turn_on():
     mqtt_client.send_ON()
     return 'DnD turned ON'
 
-@app.route('/dnd/off')
+@app.route('/dnd/off', methods=['POST'])
 def dnd_turn_off():
     mqtt_client.send_OFF()
     return 'DnD turned OFF'
