@@ -17,4 +17,4 @@ docker run -it -v $DIR/mqtt/config/password:/password eclipse-mosquitto mosquitt
 
 # Start MQTT
 export MQTT_PORT
-docker-compose -f $DIR/mqtt/docker-compose.yml up #todo '-d'
+docker-compose -f $DIR/mqtt/docker-compose.yml up -d
