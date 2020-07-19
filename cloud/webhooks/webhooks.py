@@ -20,6 +20,7 @@ class MQTTClient:
         self.paho_client.connect(
             host=config['mqtt']['domain'], 
             port=config['mqtt']['port'])
+        self.paho_client.loop_start()
 
     @staticmethod
     def _on_connect(client, _userdata, _flags, _rc):
