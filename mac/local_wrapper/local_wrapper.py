@@ -79,5 +79,25 @@ def handle_cmd_from_mqtt(cmd):
         print(f"Unknown command '{cmd}' - IGNORING")
 
 
-mqtt_client = MQTTClient(cmd_handler=handle_cmd_from_mqtt)
-mqtt_client.connect_and_start_listening()
+# mqtt_client = MQTTClient(cmd_handler=handle_cmd_from_mqtt)
+# mqtt_client.connect_and_start_listening()
+
+def debug_daemon():
+    from datetime import datetime
+
+    def timestamp():
+        now = datetime.now()
+        return now.strftime("[%H:%M:%S]")
+
+    print(timestamp() + " <== There should be a 20 sec interval between 2 lines")
+    print(os.system('pwd'))
+    print(os.system('ls -la'))
+
+    print('turning on dnd')
+    os.system(
+        'defaults -currentHost write ~/Library/Preferences/ByHost/com.apple.notificationcenterui doNotDisturb -boolean true')
+    os.system('defaults -currentHost write ~/Library/Preferences/ByHost/com.apple.notificationcenterui doNotDisturbDate -date "`date -u +\"%Y-%m-%d %H:%M:%S +0000\"`"')
+    os.system('killall NotificationCenter')
+
+
+debug_daemon()
