@@ -1,0 +1,9 @@
+{
+  "mqtt": {
+    "domain": "%DOMAIN",
+    "port": %MQTT_PORT,
+    "user": "syncdnd",
+    "pass": "%MQTT_PASS",
+    "topic": "dnd"
+  }
+}

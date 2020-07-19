@@ -20,10 +20,18 @@ else
     echo "virtualenv setup: Skipping installation"
 fi
 
-# Create app dir & copy code
+# Create and go to working dir
 mkdir -p $WORKING_DIR
-cp $APP_DIR/local_wrapper.py $WORKING_DIR
 cd $WORKING_DIR
+
+# Copy app and config
+cp $APP_DIR/local_wrapper.py .
+source $DIR/../config.env # Load syncdnd config
+cat $APP_DIR/config.json.template |
+    sed "s|%DOMAIN|$DOMAIN|" |
+    sed "s|%MQTT_PORT|$MQTT_PORT|" |
+    sed "s|%MQTT_PASS|$MQTT_PASS|" \
+        >./config.json
 
 # Create & activate virtual env
 python3 -m venv $VIRTUALENV
