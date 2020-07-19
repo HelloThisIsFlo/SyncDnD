@@ -45,7 +45,7 @@ Sync Do Not Disturb between the iPhone and the Mac.
 
 
 
-## Deployment
+## Installation
 
 ### Prerequisite
 #### Configuration
@@ -74,25 +74,31 @@ Required for both the server in the Cloud and the Mac
   </p>
 
 ### 2. Cloud
-**You must be on a server remotely accessible via the domain configured in `DOMAIN` when performing these steps**
-- SSH in your server
-- Checkout the project
-- Create the [configuration file](#Configuration)
-- [Generate a LetsEncrypt certificate with certbot](https://certbot.eff.org/instructions) for the domain configured in `DOMAIN`  
-  _Certificates must be available at:_
-  ```shell
-  /etc/letsencrypt/live/DOMAIN/cert.pem
-  /etc/letsencrypt/live/DOMAIN/chain.pem
-  /etc/letsencrypt/live/DOMAIN/privkey.pem
-  ```
-- **Start the MQTT server with:** `./cloud/start_mqtt.sh`
-- **Start the webhooks with:** `./cloud/start_webhooks.sh`
+**The following steps must be performed on a server remotely accessible via the domain configured in `DOMAIN`**
+1. SSH in your server
+1. Checkout the project
+1. Create the [configuration file](#Configuration)
+1. [Generate a LetsEncrypt certificate with certbot](https://certbot.eff.org/instructions) for the domain configured in `DOMAIN`  
+   _Certificates must be available at:_
+   ```shell
+   /etc/letsencrypt/live/DOMAIN/cert.pem
+   /etc/letsencrypt/live/DOMAIN/chain.pem
+   /etc/letsencrypt/live/DOMAIN/privkey.pem
+   ```
+1. **Start the MQTT server with:** `./cloud/start_mqtt.sh`
+1. **Start the webhooks with:** `./cloud/start_webhooks.sh`
 
 ### 3. Mac
-**This step should be performed on the Mac**
-- Open a shell on your mac
-- Checkout the project
-- Create the [configuration file](#Configuration)
-- **Start the local wrapper with:** `./mac/start_local_wrapper.sh`
+**The following steps should be performed on the Mac**
+1. Open a shell on your mac
+1. Checkout the project
+1. Create the [configuration file](#Configuration)
+1. **Start the local wrapper with:** `./mac/install_local_wrapper.sh`
 
 ### 4. Done 😃🎉
+
+
+## Uninstallation
+1. **iPhone:** Remove the shortcuts
+2. **Cloud:** Run `./cloud/stop_mqtt.sh` and `./cloud/stop_webhooks.sh`
+3. **Mac:** Run `./mac/uninstall_local_wrapper.sh`
