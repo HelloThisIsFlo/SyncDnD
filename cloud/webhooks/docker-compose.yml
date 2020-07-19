@@ -1,0 +1,9 @@
+version: '2.3'
+services:
+  webhooks:
+    build: .
+    ports:
+      - $WEBHOOKS_PORT:5000
+    environment:
+      - "FLASK_APP=webhooks.py"
+    restart: always
