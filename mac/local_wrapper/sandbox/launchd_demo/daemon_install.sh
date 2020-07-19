@@ -8,16 +8,6 @@ WORKING_DIR=/usr/local/lib/$LABEL
 PLIST_FILENAME=$LABEL
 PLIST_PATH=$HOME/Library/LaunchAgents/$PLIST_FILENAME
 
-# Install virtualenv if needed
-if ! pip3 show virtualenv >/dev/null; then
-    echo "virtualenv setup: Not found for 'python3'"
-    echo "virtualenv setup: Installing"
-    pip3 install --user virtualenv
-else
-    echo "virtualenv setup: Found for 'python3'"
-    echo "virtualenv setup: Skipping installation"
-fi
-
 # Create app dir & copy code
 mkdir -p $WORKING_DIR
 cd $WORKING_DIR
