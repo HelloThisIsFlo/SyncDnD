@@ -1,4 +1,7 @@
 #!/bin/bash
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-tail -f $DIR/output/stdout.log
+LABEL=com.floriankempenich.syncdnd.daemon.plist
+WORKING_DIR=/usr/local/lib/$LABEL
+
+tail -f $WORKING_DIR/output/stdout.log

@@ -29,7 +29,7 @@
 
     <key>ProgramArguments</key>
     <array>
-      <string>/usr/bin/python3</string>
+      <string>%WORKING_DIR/%VIRTUALENV/bin/python3</string>
       <string>daemon.py</string>
     </array>
 
